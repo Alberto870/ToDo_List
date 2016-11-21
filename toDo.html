@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/toDo.js"></script>
+    <link rel="stylesheet" href="css/toDo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  </head>
+  <body ng-controller="todoCtrl">
+
+<ul class="nav nav-tabs" id="navegador">
+  <li role="presentation" class="active"><a href="#">My List</a></li>
+  <li role="presentation"><a href="#">Anexo</a></li>
+  <li role="presentation"><a href="#">Registros</a></li>
+</ul>
+
+    <video src="imagenes/elpropio.avi" autoplay loop muted>
+
+      </video>
+
+
+
+<section id="formulario">
+  <form ng-submit="todoAdd()">
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-xs-6 col-xs-offset-3 ">
+    <h1 id="title">TODOLIST APP</h1>
+
+    <div class="input-group">
+
+      <input type="text" class="form-control" placeholder="Add New...." ng-model="todoInput" required="" id="text1">
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="button" ng-click="todoAdd()">Go!</button>
+        <button class="btn btn-danger" type="button" ng-click="remove()">Delete All!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+
+  </form>
+</section>
+
+<section id="lista">
+    <div id="cuadro" ng-repeat="x in todoList">
+      <h3>{{x.texto}}</h3>
+      <span ng-click="delete($index)" id="delete"><button type="button" name="button" class="glyphicon glyphicon-trash"></button></span>
+    </div>
+
+</section>
+
+  </body>
+</html>
